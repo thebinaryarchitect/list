@@ -9,7 +9,7 @@
 import Foundation
 
 // Data model for an item that belongs to a list.
-class ListItem {
+class ListItem : NSObject {
     // A unique ID
     let identifier: String
     

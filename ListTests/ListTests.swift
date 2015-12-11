@@ -2,8 +2,8 @@
 //  ListTests.swift
 //  ListTests
 //
-//  Created by Xiao Yao on 12/11/15.
-//  Copyright © 2015 Xiao Yao. All rights reserved.
+//  Copyright (C) 2015 Xiao Yao. All Rights Reserved.
+//  See LICENSE.txt for more information.
 //
 
 import XCTest

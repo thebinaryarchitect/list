@@ -8,18 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UINavigationController {
+    required init?(coder aDecoder: NSCoder) {
+        let listVC: ListViewController
+        if let list = NSUserDefaults.standardUserDefaults().loadList() {
+            listVC = ListViewController.init(list: list)
+        } else {
+            let list = List.init(title: "My List")
+            listVC = ListViewController.init(list: list)
+        }
+        super.init(rootViewController: listVC)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationBar.translucent = false
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

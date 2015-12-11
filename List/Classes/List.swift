@@ -25,7 +25,6 @@ class ListItem : NSObject {
     //   title: String
     //   completed: NSNumber
     init(dictionary: NSDictionary) {
-        
         if let identifier = dictionary["identifier"] as? String {
             self.identifier = identifier
         } else {
@@ -34,15 +33,13 @@ class ListItem : NSObject {
         
         if let title = dictionary["title"] as? String {
             self.title = title
-        } else {
-            self.title = ""
         }
         
         if let completed = dictionary["completed"] as? NSNumber {
             self.completed = completed.boolValue
-        } else {
-            self.completed = false
         }
+        
+        super.init()
     }
     
     // Initialize an item with a title

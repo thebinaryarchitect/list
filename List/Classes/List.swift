@@ -9,7 +9,7 @@
 import Foundation
 
 // Data model for an item that belongs to a list.
-class ListItem : NSObject {
+class ListItem : NSObject, NSCoding {
     // A unique ID
     let identifier: String
     
@@ -47,10 +47,34 @@ class ListItem : NSObject {
         self.identifier = NSUUID.init().UUIDString
         self.title = title
     }
+    
+    // MARK: NSCoding
+    
+    required init?(coder aDecoder: NSCoder) {
+        if let identifier = aDecoder.decodeObjectForKey("identifier") as? String {
+            self.identifier = identifier
+        } else {
+            self.identifier = NSUUID.init().UUIDString
+        }
+        
+        if let title = aDecoder.decodeObjectForKey("title") as? String {
+            self.title = title
+        }
+        
+        if let completed = aDecoder.decodeObjectForKey("completed") as? NSNumber {
+            self.completed = completed.boolValue
+        }
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.identifier, forKey: "identifier")
+        aCoder.encodeObject(self.title, forKey: "title")
+        aCoder.encodeBool(self.completed, forKey: "completed")
+    }
 }
 
 // Data model for a list
-class List : NSObject {
+class List : NSObject, NSCoding {
     // A unique ID
     let identifier: String
     
@@ -90,5 +114,31 @@ class List : NSObject {
         self.identifier = NSUUID.init().UUIDString
         self.title = title
         self.items = []
+    }
+    
+    // MARK: NSCoding
+    
+    required init?(coder aDecoder: NSCoder) {
+        if let identifier = aDecoder.decodeObjectForKey("identifier") as? String {
+            self.identifier = identifier
+        } else {
+            self.identifier = NSUUID.init().UUIDString
+        }
+        
+        if let title = aDecoder.decodeObjectForKey("title") as? String {
+            self.title = title
+        }
+        
+        if let items = aDecoder.decodeObjectForKey("items") as? [ListItem] {
+            self.items = items
+        } else {
+            self.items = []
+        }
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.identifier, forKey: "identifier")
+        aCoder.encodeObject(self.title, forKey: "title")
+        aCoder.encodeObject(self.items, forKey: "items")
     }
 }

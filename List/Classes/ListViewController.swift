@@ -79,6 +79,17 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
         self.list.items.insert(item, atIndex: destinationIndexPath.row)
     }
     
+    // MARK: Private
+    
+    func addItem(text: String) {
+        if !text.isEmpty {
+            let item = ListItem.init(title: text)
+            self.list.items.append(item)
+            let indexPath = NSIndexPath.init(forRow: self.list.items.count-1, inSection: 0)
+            self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
+    
     // MARK: UITableViewDelegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -87,5 +98,24 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
         item.completed = !item.completed
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = item.completed ? .Checkmark : .None
+    }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if let text = textField.text {
+            self.addItem(text)
+            textField.text = nil
+            return false
+        }
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if let text = textField.text {
+            self.addItem(text)
+            textField.text = nil
+        }
     }
 }

@@ -32,6 +32,8 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
         textField.delegate = self
         textField.placeholder = "Add List Item"
         self.navigationItem.titleView = textField
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
     }
     
     // MARK: UITableViewDataSource

@@ -12,7 +12,7 @@ import UIKit
 // Controller for a list.
 class ListViewController : UITableViewController, UITextFieldDelegate {
     // The list
-    var list: List
+    var list: List?
     
     // Initialize with a list
     init(list: List) {
@@ -45,13 +45,13 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.list.items.count
+        return self.list!.items.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(UITableViewCell.self), forIndexPath: indexPath)
         
-        let item = self.list.items[indexPath.row]
+        let item = self.list!.items[indexPath.row]
         cell.textLabel?.text = item.title
         cell.accessoryType = item.completed ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None
         
@@ -64,8 +64,8 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            self.list.items.removeAtIndex(indexPath.row)
-            self.list.save()
+            self.list!.items.removeAtIndex(indexPath.row)
+            self.list!.save()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
@@ -75,10 +75,10 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        let item = self.list.items[sourceIndexPath.row]
-        self.list.items.removeAtIndex(sourceIndexPath.row)
-        self.list.items.insert(item, atIndex: destinationIndexPath.row)
-        self.list.save()
+        let item = self.list!.items[sourceIndexPath.row]
+        self.list!.items.removeAtIndex(sourceIndexPath.row)
+        self.list!.items.insert(item, atIndex: destinationIndexPath.row)
+        self.list!.save()
     }
     
     // MARK: Private
@@ -86,9 +86,9 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
     func addItem(text: String) {
         if !text.isEmpty {
             let item = ListItem.init(title: text)
-            self.list.items.append(item)
-            self.list.save()
-            let indexPath = NSIndexPath.init(forRow: self.list.items.count-1, inSection: 0)
+            self.list!.items.append(item)
+            self.list!.save()
+            let indexPath = NSIndexPath.init(forRow: self.list!.items.count-1, inSection: 0)
             self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
@@ -97,9 +97,9 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let item = self.list.items[indexPath.row]
+        let item = self.list!.items[indexPath.row]
         item.completed = !item.completed
-        self.list.save()
+        self.list!.save()
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = item.completed ? .Checkmark : .None
     }

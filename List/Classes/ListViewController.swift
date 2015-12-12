@@ -78,4 +78,14 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
         self.list.items.removeAtIndex(sourceIndexPath.row)
         self.list.items.insert(item, atIndex: destinationIndexPath.row)
     }
+    
+    // MARK: UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let item = self.list.items[indexPath.row]
+        item.completed = !item.completed
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.accessoryType = item.completed ? .Checkmark : .None
+    }
 }

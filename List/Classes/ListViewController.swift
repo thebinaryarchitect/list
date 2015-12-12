@@ -65,6 +65,7 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             self.list.items.removeAtIndex(indexPath.row)
+            self.list.save()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
@@ -77,6 +78,7 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
         let item = self.list.items[sourceIndexPath.row]
         self.list.items.removeAtIndex(sourceIndexPath.row)
         self.list.items.insert(item, atIndex: destinationIndexPath.row)
+        self.list.save()
     }
     
     // MARK: Private
@@ -85,6 +87,7 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
         if !text.isEmpty {
             let item = ListItem.init(title: text)
             self.list.items.append(item)
+            self.list.save()
             let indexPath = NSIndexPath.init(forRow: self.list.items.count-1, inSection: 0)
             self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
@@ -96,6 +99,7 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let item = self.list.items[indexPath.row]
         item.completed = !item.completed
+        self.list.save()
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = item.completed ? .Checkmark : .None
     }

@@ -116,6 +116,16 @@ class List : NSObject, NSCoding {
         self.items = []
     }
     
+    // MARK: Public
+    
+    func save() {
+        NSUserDefaults.standardUserDefaults().saveList(self)
+    }
+    
+    func delete() {
+        NSUserDefaults.standardUserDefaults().deleteList(self)
+    }
+    
     // MARK: NSCoding
     
     required init?(coder aDecoder: NSCoder) {

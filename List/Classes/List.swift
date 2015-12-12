@@ -69,7 +69,7 @@ class ListItem : NSObject, NSCoding {
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(self.identifier, forKey: "identifier")
         aCoder.encodeObject(self.title, forKey: "title")
-        aCoder.encodeBool(self.completed, forKey: "completed")
+        aCoder.encodeObject((self.completed), forKey: "completed")
     }
 }
 

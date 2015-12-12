@@ -73,9 +73,11 @@ class ListViewController : UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        let item = self.list.items[sourceIndexPath.row]
-        self.list.items.insert(item, atIndex: destinationIndexPath.row)
-        self.list.save()
+        if sourceIndexPath.row != destinationIndexPath.row {
+            let item = self.list.items[sourceIndexPath.row]
+            self.list.items.insert(item, atIndex: destinationIndexPath.row)
+            self.list.save()
+        }
     }
     
     // MARK: Private

@@ -43,13 +43,23 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "135A8CD31C1E1379009A0D6A"
+               BuildableName = "ListKitTests.xctest"
+               BlueprintName = "ListKitTests"
+               ReferencedContainer = "container:List.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "139E7F411C1CCF9E00A51D2E"
-            BuildableName = "Today.appex"
-            BlueprintName = "Today"
+            BlueprintIdentifier = "13BD75EA1C1B8C110076A0B3"
+            BuildableName = "List.app"
+            BlueprintName = "List"
             ReferencedContainer = "container:List.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,8 +77,12 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/Today">
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13BD75EA1C1B8C110076A0B3"
@@ -76,7 +90,7 @@
             BlueprintName = "List"
             ReferencedContainer = "container:List.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

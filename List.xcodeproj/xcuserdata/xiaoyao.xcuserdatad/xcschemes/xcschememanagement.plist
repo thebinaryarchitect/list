@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ListKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Today.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>135A8CCA1C1E1376009A0D6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>135A8CD31C1E1379009A0D6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>139E7F411C1CCF9E00A51D2E</key>
 		<dict>
 			<key>primary</key>

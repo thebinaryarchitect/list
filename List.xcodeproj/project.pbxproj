@@ -21,6 +21,8 @@
 		13BD76261C1B8D320076A0B3 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD76251C1B8D320076A0B3 /* List.swift */; };
 		13BD76281C1B91940076A0B3 /* NSUserDefaults+Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD76271C1B91940076A0B3 /* NSUserDefaults+Lists.swift */; };
 		13BD762A1C1B92EC0076A0B3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD76291C1B92EC0076A0B3 /* ListViewController.swift */; };
+		13EC2FE41C1DFFF6005D48B2 /* NSUserDefaults+Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD76271C1B91940076A0B3 /* NSUserDefaults+Lists.swift */; };
+		13EC2FE51C1DFFF9005D48B2 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD76251C1B8D320076A0B3 /* List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -412,6 +414,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				139E7F481C1CCF9F00A51D2E /* TodayViewController.swift in Sources */,
+				13EC2FE41C1DFFF6005D48B2 /* NSUserDefaults+Lists.swift in Sources */,
+				13EC2FE51C1DFFF9005D48B2 /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

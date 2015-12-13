@@ -14,7 +14,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     let list: List
     
     override init(style: UITableViewStyle) {
-        if let list = NSUserDefaults.standardUserDefaults().loadList() {
+        if let list = NSUserDefaults.groupUserDefaults().loadList() {
             self.list = list
         } else {
             self.list = List.init(title: "")

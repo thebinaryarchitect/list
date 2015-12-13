@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UINavigationController {
     required init?(coder aDecoder: NSCoder) {
         let listVC: ListViewController
-        if let list = NSUserDefaults.standardUserDefaults().loadList() {
+        if let list = NSUserDefaults.groupUserDefaults().loadList() {
             listVC = ListViewController.init(list: list)
         } else {
             let list = List.init(title: "My List")

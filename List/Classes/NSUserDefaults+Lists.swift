@@ -33,4 +33,8 @@ extension NSUserDefaults {
         }
         return nil
     }
+    
+    class func groupUserDefaults() -> NSUserDefaults {
+        return NSUserDefaults.init(suiteName: "group.com.thebinaryarchitect.sample.list")!
+    }
 }

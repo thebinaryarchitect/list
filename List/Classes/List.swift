@@ -119,11 +119,11 @@ class List : NSObject, NSCoding {
     // MARK: Public
     
     func save() {
-        NSUserDefaults.standardUserDefaults().saveList(self)
+        NSUserDefaults.groupUserDefaults().saveList(self)
     }
     
     func delete() {
-        NSUserDefaults.standardUserDefaults().deleteList(self)
+        NSUserDefaults.groupUserDefaults().deleteList(self)
     }
     
     // MARK: NSCoding

@@ -20,7 +20,6 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
             self.list = List.init(title: "")
         }
         
-        print(self.list.items)
         super.init(style: style)
     }
 
@@ -34,8 +33,6 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         self.preferredContentSize = CGSizeMake(0.0, CGFloat(self.list.items.count) * 44.0)
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
-        
-        print(self.preferredContentSize)
     }
     
     // MARK: NCWidgetProviding

@@ -11,7 +11,7 @@ import NotificationCenter
 import ListKit
 
 class TodayViewController: UITableViewController, NCWidgetProviding {
-    let list: List
+    var list: List
     
     override init(style: UITableViewStyle) {
         if let list = NSUserDefaults.groupUserDefaults().loadList() {
@@ -19,7 +19,6 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         } else {
             self.list = List.init(title: "")
         }
-        
         super.init(style: style)
     }
 
@@ -34,6 +33,16 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         self.tableView.separatorStyle = .None
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let list = NSUserDefaults.groupUserDefaults().loadList() {
+            self.list = list
+        } else {
+            self.list = List.init(title: "")
+        }
+        self.tableView.reloadData()
     }
     
     // MARK: NCWidgetProviding

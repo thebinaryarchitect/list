@@ -33,6 +33,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         self.preferredContentSize = CGSizeMake(0.0, CGFloat(self.list.items.count) * 44.0)
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+        self.tableView.separatorStyle = .None
     }
     
     // MARK: NCWidgetProviding
@@ -62,6 +63,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         let item = self.list.items[indexPath.row]
         cell.textLabel?.text = item.title
         cell.accessoryType = item.completed ? .Checkmark : .None
+        cell.textLabel?.textColor = UIColor.whiteColor()
         
         return cell
     }

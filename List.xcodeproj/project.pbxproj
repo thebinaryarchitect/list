@@ -681,7 +681,7 @@
 		135A8CE21C1E1379009A0D6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -706,7 +706,7 @@
 		135A8CE31C1E1379009A0D6A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -958,6 +958,7 @@
 				135A8CE31C1E1379009A0D6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		135A8CE81C1E1379009A0D6A /* Build configuration list for PBXNativeTarget "ListKitTests" */ = {
 			isa = XCConfigurationList;
@@ -966,6 +967,7 @@
 				135A8CE51C1E1379009A0D6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		139E7F521C1CCF9F00A51D2E /* Build configuration list for PBXNativeTarget "Today" */ = {
 			isa = XCConfigurationList;

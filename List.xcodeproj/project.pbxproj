@@ -13,6 +13,8 @@
 		135A8CE01C1E1379009A0D6A /* ListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A8CCB1C1E1376009A0D6A /* ListKit.framework */; };
 		135A8CE11C1E1379009A0D6A /* ListKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 135A8CCB1C1E1376009A0D6A /* ListKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		135A8CE91C1E13DF009A0D6A /* ListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A8CCB1C1E1376009A0D6A /* ListKit.framework */; };
+		135A8CEC1C1E14D5009A0D6A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A8CEA1C1E14D5009A0D6A /* List.swift */; };
+		135A8CED1C1E14D6009A0D6A /* NSUserDefaults+Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A8CEB1C1E14D5009A0D6A /* NSUserDefaults+Lists.swift */; };
 		139E7F451C1CCF9F00A51D2E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 139E7F441C1CCF9F00A51D2E /* NotificationCenter.framework */; };
 		139E7F481C1CCF9F00A51D2E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139E7F471C1CCF9F00A51D2E /* TodayViewController.swift */; };
 		139E7F4B1C1CCF9F00A51D2E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 139E7F491C1CCF9F00A51D2E /* MainInterface.storyboard */; };
@@ -24,10 +26,6 @@
 		13BD760F1C1B8C110076A0B3 /* ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD760E1C1B8C110076A0B3 /* ListUITests.swift */; };
 		13BD76231C1B8D040076A0B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD761D1C1B8D040076A0B3 /* AppDelegate.swift */; };
 		13BD76241C1B8D040076A0B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD761E1C1B8D040076A0B3 /* ViewController.swift */; };
-		13BD76261C1B8D320076A0B3 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD76251C1B8D320076A0B3 /* List.swift */; };
-		13BD76281C1B91940076A0B3 /* NSUserDefaults+Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD76271C1B91940076A0B3 /* NSUserDefaults+Lists.swift */; };
-		13EC2FE41C1DFFF6005D48B2 /* NSUserDefaults+Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD76271C1B91940076A0B3 /* NSUserDefaults+Lists.swift */; };
-		13EC2FE51C1DFFF9005D48B2 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD76251C1B8D320076A0B3 /* List.swift */; };
 		13EC2FE71C1E05BC005D48B2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD76291C1B92EC0076A0B3 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +106,8 @@
 		135A8CD41C1E1379009A0D6A /* ListKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		135A8CDB1C1E1379009A0D6A /* ListKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKitTests.swift; sourceTree = "<group>"; };
 		135A8CDD1C1E1379009A0D6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		135A8CEA1C1E14D5009A0D6A /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		135A8CEB1C1E14D5009A0D6A /* NSUserDefaults+Lists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+Lists.swift"; sourceTree = "<group>"; };
 		139E7F421C1CCF9E00A51D2E /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		139E7F441C1CCF9F00A51D2E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		139E7F471C1CCF9F00A51D2E /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -126,8 +126,6 @@
 		13BD76101C1B8C110076A0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13BD761D1C1B8D040076A0B3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13BD761E1C1B8D040076A0B3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		13BD76251C1B8D320076A0B3 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
-		13BD76271C1B91940076A0B3 /* NSUserDefaults+Lists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+Lists.swift"; sourceTree = "<group>"; };
 		13BD76291C1B92EC0076A0B3 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		13EC2FE11C1DDBCC005D48B2 /* List.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = List.entitlements; sourceTree = "<group>"; };
 		13EC2FE21C1DDC94005D48B2 /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Today.entitlements; sourceTree = "<group>"; };
@@ -186,6 +184,8 @@
 		135A8CCC1C1E1377009A0D6A /* ListKit */ = {
 			isa = PBXGroup;
 			children = (
+				135A8CEA1C1E14D5009A0D6A /* List.swift */,
+				135A8CEB1C1E14D5009A0D6A /* NSUserDefaults+Lists.swift */,
 				135A8CCD1C1E1377009A0D6A /* ListKit.h */,
 				135A8CCF1C1E1377009A0D6A /* Info.plist */,
 			);
@@ -284,9 +284,7 @@
 			children = (
 				13BD761D1C1B8D040076A0B3 /* AppDelegate.swift */,
 				13BD761E1C1B8D040076A0B3 /* ViewController.swift */,
-				13BD76251C1B8D320076A0B3 /* List.swift */,
 				13BD76291C1B92EC0076A0B3 /* ListViewController.swift */,
-				13BD76271C1B91940076A0B3 /* NSUserDefaults+Lists.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -570,6 +568,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				135A8CEC1C1E14D5009A0D6A /* List.swift in Sources */,
+				135A8CED1C1E14D6009A0D6A /* NSUserDefaults+Lists.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,8 +586,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				139E7F481C1CCF9F00A51D2E /* TodayViewController.swift in Sources */,
-				13EC2FE41C1DFFF6005D48B2 /* NSUserDefaults+Lists.swift in Sources */,
-				13EC2FE51C1DFFF9005D48B2 /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,9 +595,7 @@
 			files = (
 				13BD76241C1B8D040076A0B3 /* ViewController.swift in Sources */,
 				13BD76231C1B8D040076A0B3 /* AppDelegate.swift in Sources */,
-				13BD76261C1B8D320076A0B3 /* List.swift in Sources */,
 				13EC2FE71C1E05BC005D48B2 /* ListViewController.swift in Sources */,
-				13BD76281C1B91940076A0B3 /* NSUserDefaults+Lists.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +682,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -700,6 +697,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thebinaryarchitect.sample.list.listkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -709,6 +707,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;

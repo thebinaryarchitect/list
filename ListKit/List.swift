@@ -9,22 +9,22 @@
 import Foundation
 
 // Data model for an item that belongs to a list.
-class ListItem : NSObject, NSCoding {
+public class ListItem : NSObject, NSCoding {
     // A unique ID
-    let identifier: String
+    public let identifier: String
     
     // The title
-    var title = ""
+    public var title = ""
     
     // Tracks the completion state
-    var completed = false
+    public var completed = false
     
     // Initialize a list item from a dictionary object.
     // The dictionary should conform to the following structure:
     //   identifier: String
     //   title: String
     //   completed: NSNumber
-    init(dictionary: NSDictionary) {
+    public init(dictionary: NSDictionary) {
         if let identifier = dictionary["identifier"] as? String {
             self.identifier = identifier
         } else {
@@ -43,14 +43,14 @@ class ListItem : NSObject, NSCoding {
     }
     
     // Initialize an item with a title
-    init(title: String) {
+    public init(title: String) {
         self.identifier = NSUUID.init().UUIDString
         self.title = title
     }
     
     // MARK: NSCoding
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         if let identifier = aDecoder.decodeObjectForKey("identifier") as? String {
             self.identifier = identifier
         } else {
@@ -66,7 +66,7 @@ class ListItem : NSObject, NSCoding {
         }
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
+    public func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(self.identifier, forKey: "identifier")
         aCoder.encodeObject(self.title, forKey: "title")
         aCoder.encodeObject((self.completed), forKey: "completed")
@@ -74,22 +74,22 @@ class ListItem : NSObject, NSCoding {
 }
 
 // Data model for a list
-class List : NSObject, NSCoding {
+public  class List : NSObject, NSCoding {
     // A unique ID
-    let identifier: String
+    public let identifier: String
     
     // The title
-    var title = ""
+    public var title = ""
     
     // List items
-    var items: [ListItem]
+    public var items: [ListItem]
     
     // Initializes a list from a dictionary object.
     // The dictionary should conform to the following structure:
     //   identifier: String
     //   title: String
     //   items: [ListItem]
-    init(dictionary: NSDictionary) {
+    public init(dictionary: NSDictionary) {
         if let identifier = dictionary["identifier"] as? String {
             self.identifier = identifier
         } else {
@@ -110,7 +110,7 @@ class List : NSObject, NSCoding {
     }
     
     // Initializes a list from a title.
-    init(title: String) {
+    public init(title: String) {
         self.identifier = NSUUID.init().UUIDString
         self.title = title
         self.items = []
@@ -118,17 +118,17 @@ class List : NSObject, NSCoding {
     
     // MARK: Public
     
-    func save() {
+    public func save() {
         NSUserDefaults.groupUserDefaults().saveList(self)
     }
     
-    func delete() {
+    public func delete() {
         NSUserDefaults.groupUserDefaults().deleteList(self)
     }
     
     // MARK: NSCoding
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         if let identifier = aDecoder.decodeObjectForKey("identifier") as? String {
             self.identifier = identifier
         } else {
@@ -146,7 +146,7 @@ class List : NSObject, NSCoding {
         }
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
+    public func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(self.identifier, forKey: "identifier")
         aCoder.encodeObject(self.title, forKey: "title")
         aCoder.encodeObject(self.items, forKey: "items")

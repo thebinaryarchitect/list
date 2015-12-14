@@ -12,20 +12,20 @@ import Foundation
 let key = "com.thebinaryarchitect.ios.sample.list.savedlist"
 
 // Adds persistance functionality to lists.
-extension NSUserDefaults {
+public extension NSUserDefaults {
     // Saves the list
-    func saveList(list: List) {
+    public func saveList(list: List) {
         let data = NSKeyedArchiver.archivedDataWithRootObject(list)
         self.setObject(data, forKey: key)
     }
     
     // Removes the list
-    func deleteList(list: List) {
+    public func deleteList(list: List) {
         self.removeObjectForKey(key)
     }
     
     // Loads the list
-    func loadList() -> List? {
+    public func loadList() -> List? {
         if let data = self.objectForKey(key) as? NSData {
             if let list = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? List {
                 return list
@@ -34,7 +34,7 @@ extension NSUserDefaults {
         return nil
     }
     
-    class func groupUserDefaults() -> NSUserDefaults {
+    public class func groupUserDefaults() -> NSUserDefaults {
         return NSUserDefaults.init(suiteName: "group.com.thebinaryarchitect.sample.list")!
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ListKit
 
 // Controller for a list.
 class ListViewController : UITableViewController, UITextFieldDelegate {

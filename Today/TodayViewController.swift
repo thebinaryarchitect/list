@@ -8,7 +8,7 @@
 
 import UIKit
 import NotificationCenter
-import List
+import ListKit
 
 class TodayViewController: UITableViewController, NCWidgetProviding {
     let list: List
